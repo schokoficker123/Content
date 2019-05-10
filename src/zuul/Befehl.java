@@ -1,20 +1,20 @@
 package zuul;
 
 /**
- * Objekte dieser Klasse halten Informationen Ã¼ber Befehle,
+ * Objekte dieser Klasse halten Informationen über Befehle,
  * die der Benutzer eingegeben hat. Ein Befehl besteht momentan
  * aus zwei Zeichenketten: einem Befehlswort und einem zweiten
  * Wort. Beim Befehl "nimm karte" beispielsweise sind die beiden
  * Zeichenketten "nimm" und "karte".
  * 
- * Befehle werden von Benutzern dieser Klasse auf GÃ¼ltigkeit
- * Ã¼berprÃ¼ft. Wenn ein Spieler einen ungÃ¼ltigen Befehl eingegeben
+ * Befehle werden von Benutzern dieser Klasse auf Gültigkeit
+ * überprüft. Wenn ein Spieler einen ungültigen Befehl eingegeben
  * hat (ein unbekanntes Befehlswort), dann ist das Befehlswort <null>.
  *
  * Wenn der Befehl nur aus einem Wort bestand, dann ist das
  * zweite Wort <null>.
  * 
- * @author  Michael KÃ¼Ã¶lling und David J. Barnes
+ * @author  Michael Kölling und David J. Barnes
  * @version 2008.03.30
  */
 
@@ -24,8 +24,8 @@ public class Befehl
     private String zweitesWort;
 
     /**
-     * Erzeuge ein Befehlsobjekt. Beide WÃ¶rter mÃ¼ssen angegeben werden,
-     * aber jedes oder beide dÃ¼rfen 'null' sein.
+     * Erzeuge ein Befehlsobjekt. Beide Wörter müssen angegeben werden,
+     * aber jedes oder beide dürfen 'null' sein.
      * @param erstesWort Das erste Wort des Befehls. Sollte
      *                   'null' sein, wenn dieser Befehl als nicht
      *                   vom Spiel erkannt gekennzeichnet werden soll.
