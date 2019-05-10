@@ -23,7 +23,7 @@ public class WorldGenerator {
 
     private void setzeAusgaenge() {
 
-        // die Ausg�nge initialisieren
+        // die Ausgaenge initialisieren
         lichtung.setAusgang("down", piratenHoehle);
         lichtung.setAusgang("east", waldstueck);
         waldstueck.setAusgang("west", lichtung);
