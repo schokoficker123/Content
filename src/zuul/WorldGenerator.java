@@ -7,6 +7,7 @@ public class WorldGenerator {
         this.raeumeAnlegen();
         this.setzeAusgaenge();
         this.addGegenstaende();
+        this.addNPC();
     }
 
     private void raeumeAnlegen() {
@@ -55,6 +56,10 @@ public class WorldGenerator {
         waldstueck.gegenstandAblegen(new Essen("Pilz", "ein seltsam aussehender Pilz", 1, 20));
         lichtung.gegenstandAblegen(new Gegenstand("Korb", "ein Weidenkorb gefüllt mit Brot", 4));
         lichtung.gegenstandAblegen(new Essen("Muffin", "lecker lecker", 1, 5));
+    }
+    
+    private void addNPC() {
+        taverne.setNPC(new NPC("Barceeper", "Guten Tag"));
     }
 
     public Raum getStartRaum() {
