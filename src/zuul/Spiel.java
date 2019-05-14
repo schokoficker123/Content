@@ -24,86 +24,90 @@ import java.util.HashMap;
 
 public class Spiel
 {
-    private Parser parser;
-    private Spieler spieler;
-    private HashMap<String, CommandFunction> commands;
-    private boolean beendet;
+	private Parser parser;
+	private Spieler spieler;
+	private HashMap<String, CommandFunction> commands;
+	private boolean beendet;
 
-    /**
-     * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
-     */
-    public Spiel()
-    {
-        this.beendet=false;
-        this.spieler=new Spieler();
-        raeumeAnlegen();
-        parser = new Parser();
-        this.commands=new HashMap<>();
+	/**
+	 * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
+	 */
+	public Spiel()
+	{
+		this.beendet=false;
+		this.spieler=new Spieler();
+		raeumeAnlegen();
+		parser = new Parser();
+		this.commands=new HashMap<>();
 
-        this.commands.put("go", new GoCommand(this.spieler));
-        this.commands.put("help", new HelpCommand(this.parser));
-        this.commands.put("look", new LookCommand(this.spieler));
-        this.commands.put("status", new StatusCommand(this.spieler));
-        this.commands.put("take", new TakeCommand(this.spieler));
-        this.commands.put("drop", new DropCommand(this.spieler));
-        this.commands.put("eat", new EatCommand(this.spieler));
-        this.commands.put("quit", new QuitCommand(this));
-        this.commands.put("sleep", new SleepCommand(this.spieler));
-    }
+		this.commands.put("go", new GoCommand(this.spieler));
+		this.commands.put("help", new HelpCommand(this.parser));
+		this.commands.put("look", new LookCommand(this.spieler));
+		this.commands.put("status", new StatusCommand(this.spieler));
+		this.commands.put("take", new TakeCommand(this.spieler));
+		this.commands.put("drop", new DropCommand(this.spieler));
+		this.commands.put("eat", new EatCommand(this.spieler));
+		this.commands.put("quit", new QuitCommand(this));
+		this.commands.put("sleep", new SleepCommand(this.spieler));
+	}
+	
+	private void raeumeAnlegen()
+	{
+		this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf der Lichtung
+	}
+	//Gibt man den Befehl "quit" ein, so stellt sich "beenden von "false" auf "true" und das Spiel wird somit beendet.
 
-    private void raeumeAnlegen()
-    {
-        this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf der Lichtung
-    }
+	public void quit() {
+		this.beendet=true;
+	}
 
-    public void quit() {
-        this.beendet=true;
-    }
+	/**
+	 * Die Hauptmethode zum Spielen. Laueft bis zum Ende des Spiels
+	 * in einer Schleife.
+	 */
+	public void spielen()
+	{
+		willkommenstextAusgeben();
 
-    /**
-     * Die Hauptmethode zum Spielen. Läuft bis zum Ende des Spiels
-     * in einer Schleife.
-     */
-    public void spielen()
-    {
-        willkommenstextAusgeben();
+		// Die Hauptschleife. Hier lesen wir wiederholt Befehle ein
+		// und fuehren sie aus, bis das Spiel beendet wird.
 
-        // Die Hauptschleife. Hier lesen wir wiederholt Befehle ein
-        // und führen sie aus, bis das Spiel beendet wird.
+		while (! beendet) {
+			Befehl befehl = parser.liefereBefehl();
+			verarbeiteBefehl(befehl);
+		}
+		System.out.println("Danke fuers Spielen. Auf Wiedersehen.");
+	}
 
-        while (! beendet) {
-            Befehl befehl = parser.liefereBefehl();
-            verarbeiteBefehl(befehl);
-        }
-        System.out.println("Danke für dieses Spiel. Auf Wiedersehen.");
-    }
+	/**
+	 * Einen Begruessungstext fuer den Spieler ausgeben.
+	 */
+	private void willkommenstextAusgeben()
+	{
+		System.out.println();
+		System.out.println("Willkommen zu Zuul!");
+		System.out.println("Entdecke die Welt von Zuul. Doch Vorsicht, ueberall lauern Gefahren!");
+		System.out.println("Tippen sie 'help', wenn Sie Hilfe brauchen.");
+		System.out.println();
+		raumInfoAusgeben();
+	}
+/**
+ * 
+ * @param befehl
+ */
+	private void verarbeiteBefehl(Befehl befehl)
+	{
+		if(befehl.istUnbekannt()) {
+			System.out.println("Ich weiss nicht, was Sie meinen...");
 
-    /**
-     * Einen Begrüßungstext für den Spieler ausgeben.
-     */
-    private void willkommenstextAusgeben()
-    {
-        System.out.println();
-        System.out.println("Willkommen zu Zuul!");
-        System.out.println("Entdecke die Welt von Zuul. Doch Vorsicht, überall lauern Gefahren!");
-        System.out.println("Tippen sie 'help', wenn Sie Hilfe brauchen.");
-        System.out.println();
-        raumInfoAusgeben();
-    }
+		} else {
+			String befehlswort = befehl.gibBefehlswort();
+			this.commands.get(befehlswort).execute(befehl);
+		}
+	}
 
-    private void verarbeiteBefehl(Befehl befehl)
-    {
-        if(befehl.istUnbekannt()) {
-            System.out.println("Ich weiß nicht, was Sie meinen...");
-
-        } else {
-            String befehlswort = befehl.gibBefehlswort();
-            this.commands.get(befehlswort).execute(befehl);
-        }
-    }
-
-    private void raumInfoAusgeben() {
-        System.out.println(this.spieler.getAktuellerRaum().getLangeBeschreibung());
-    }
+	private void raumInfoAusgeben() {
+		System.out.println(this.spieler.getAktuellerRaum().getLangeBeschreibung());
+	}
 
 }

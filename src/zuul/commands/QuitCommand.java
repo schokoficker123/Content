@@ -17,7 +17,10 @@ public class QuitCommand implements CommandFunction {
         beenden(befehl);
 
     }
-
+/**
+ * 
+ * @param befehl
+ */
     private void beenden(Befehl befehl)
     {
         if(befehl.hatZweitesWort()) {

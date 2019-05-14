@@ -5,23 +5,23 @@ import java.util.Scanner;
 
 /**
  * Dieser Parser liest Benutzereingaben und wandelt sie in
- * Befehle f�r das Adventure-Game um. Bei jedem Aufruf
+ * Befehle fuer das Adventure-Game um. Bei jedem Aufruf
  * liest er eine Zeile von der Konsole und versucht, diese als
- * einen Befehl aus bis zu zwei W�rtern zu interpretieren. Er
- * liefert den Befehl als ein Objekt der Klasse Befehl zur�ck.
+ * einen Befehl aus bis zu zwei Woertern zu interpretieren. Er
+ * liefert den Befehl als ein Objekt der Klasse Befehl zurueck.
  * 
- * Der Parser verf�gt �ber einen Satz an bekannten Befehlen. Er
+ * Der Parser verfuegt ueber einen Satz an bekannten Befehlen. Er
  * vergleicht die Eingabe mit diesen Befehlen. Wenn die Eingabe
- * keinen bekannten Befehl enth�lt, dann liefert der Parser ein als 
- * unbekannter Befehl gekennzeichnetes Objekt zur�ck.
+ * keinen bekannten Befehl enthaelt, dann liefert der Parser ein als 
+ * unbekannter Befehl gekennzeichnetes Objekt zurueck.
  * 
  * @author  Michael K�lling und David J. Barnes
  * @version 2008.03.30
  */
 public class Parser 
 {
-    private Befehlswoerter befehle;  // h�lt die g�ltigen Befehlsw�rter
-    private Scanner leser;         // Lieferant f�r eingegebene Befehle
+    private Befehlswoerter befehle;  // haelt die gueltigen Befehlswoerter
+    private Scanner leser;         // Lieferant fuerr eingegebene Befehle
 
     /**
      * Erzeuge einen Parser, der Befehle von der Konsole einliest.
@@ -33,11 +33,11 @@ public class Parser
     }
 
     /**
-     * @return Den n�chsten Befehl des Benutzers.
+     * @return Den naechsten Befehl des Benutzers.
      */
     public Befehl liefereBefehl()
     {
-        String eingabezeile;   // f�r die gesamte Eingabezeile
+        String eingabezeile;   // fuer die gesamte Eingabezeile
         String wort1 = null;
         String wort2 = null;
 
@@ -45,7 +45,7 @@ public class Parser
 
         eingabezeile = leser.nextLine();
 
-        // Finde bis zu zwei W�rter in der Zeile
+        // Finde bis zu zwei Woerter in der Zeile
         Scanner zerleger = new Scanner(eingabezeile);
         if(zerleger.hasNext()) {
             wort1 = zerleger.next();     // erstes Wort lesen
@@ -55,7 +55,7 @@ public class Parser
             }
         }
 
-        // Jetzt pr�fen, ob der Befehl bekannt ist. Wenn ja, erzeugen
+        // Jetzt pruefen, ob der Befehl bekannt ist. Wenn ja, erzeugen
         // wir das passende Befehl-Objekt. Wenn nicht, erzeugen wir
         // einen unbekannten Befehl mit 'null'.
         if(befehle.istBefehl(wort1)) {
@@ -65,6 +65,10 @@ public class Parser
             return new Befehl(null, wort2);
         }
     }
+    /**
+     * 
+     * @return Gueltige Befehle
+     */
 
     public String getAlleBefehle() {
         return this.befehle.getGueltigeBefehle();
