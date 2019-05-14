@@ -28,6 +28,7 @@ public class Spiel
     private Spieler spieler;
     private HashMap<String, CommandFunction> commands;
     private boolean beendet;
+    
 
     /**
      * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
@@ -39,6 +40,7 @@ public class Spiel
         raeumeAnlegen();
         parser = new Parser();
         this.commands=new HashMap<>();
+        
 
         this.commands.put("go", new GoCommand(this.spieler));
         this.commands.put("help", new HelpCommand(this.parser));
@@ -49,6 +51,7 @@ public class Spiel
         this.commands.put("eat", new EatCommand(this.spieler));
         this.commands.put("quit", new QuitCommand(this));
         this.commands.put("sleep", new SleepCommand(this.spieler));
+        this.commands.put("npcspeak", new NPCSpeakCommand(this.spieler));
     }
 
     private void raeumeAnlegen()
@@ -105,5 +108,5 @@ public class Spiel
     private void raumInfoAusgeben() {
         System.out.println(this.spieler.getAktuellerRaum().getLangeBeschreibung());
     }
-
+    
 }

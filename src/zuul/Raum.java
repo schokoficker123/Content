@@ -105,4 +105,16 @@ public class Raum
 		return null;
 	}
 
+	public NPC getNPC(String string) {
+		String erg = null;
+		if(this.npc.size()>0) {
+			erg+="\nNPCs:\n";
+			for(NPC np: this.npc) {
+				erg+=" - " + np.toString() + "\n";
+			}
+		}
+		
+		return null;
+	}
+
 }

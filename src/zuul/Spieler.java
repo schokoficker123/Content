@@ -89,7 +89,8 @@ public class Spieler {
     public Raum getAktuellerRaum() {
         return aktuellerRaum;
     }
-
+    
+    
     public void essen(String name) {
         for(Gegenstand g: this.gegenstaende) {
             if(g.getName().equalsIgnoreCase(name)) {
