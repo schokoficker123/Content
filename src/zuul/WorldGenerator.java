@@ -83,9 +83,11 @@ public class WorldGenerator {
  */
 	private void addGegenstaende() {
 		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 2));
-		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit SoÃŸe", 5 ));
-		piratenhoehle.gegenstandAblegen(new Gegenstand("Schatztruhe", "eine mit Golf gefuellte Holzkiste", 40));
+		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit Sosse", 5 ));
+		piratenhoehle.gegenstandAblegen(new Gegenstand("Schatztruhe", "eine mit Gold gefuellte Holzkiste", 40));
+		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensäbel", "ein gekrümmtes Säbel eines lang verstorbenen Matrosen", 8));
 		piratenhoehle.gegenstandAblegen(new Gegenstand("Schwert", "das Schwert des alten Piratenkapitaens", 10));
+		sumpf.gegenstandAblegen(new Essen("Regenwurm", "ein kleiner Wurm den man bei Hungersnot essen kann", 1, 2)); 
 		sumpf.gegenstandAblegen(new Essen("Pilz", "ein seltsam aussehender Pilz", 1, 20));
 		lichtung.gegenstandAblegen(new Gegenstand("Korb", "ein Weidenkorb gefuellt mit Brot", 4));
 		lichtung.gegenstandAblegen(new Essen("Muffin", "lecker lecker", 1, 5)); 

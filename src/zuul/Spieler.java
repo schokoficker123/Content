@@ -40,7 +40,7 @@ public class Spieler {
 	 * (Methode dafuer erstellen!).
 	 *
 	 * Die Methode gegenstandAufnehmen() liefert dann
-	 * true oder false zurück, je nachdem ob es
+	 * true oder false zurueck, je nachdem ob es
 	 * geklappt hat oder nicht.
 	 */
 
@@ -95,25 +95,25 @@ public class Spieler {
 		erg+=this.tragkraft-ermittleGewicht() + "kg kann ich noch tragen!";
 		return erg;
 	}
-/**
- * Diese Methode erlaubt es dme Spieler von Raum zu Raum zu gehen.
- * @param raum
- */
+	/**
+	 * Diese Methode erlaubt es dme Spieler von Raum zu Raum zu gehen.
+	 * @param raum
+	 */
 	public void geheZu(Raum raum) {
 		this.aktuellerRaum=raum;
 	}
-/**
- * 
- * @return Aktueller Raum, wo sich der Spieler befindet
- */
+	/**
+	 * 
+	 * @return Aktueller Raum, wo sich der Spieler befindet
+	 */
 	public Raum getAktuellerRaum() {
 		return aktuellerRaum;
 	}
-/**
- * Diese Methode erlaubt es dem Spieler einen Gegenstand zu essen.
- * Dabei muss geprueft werden ob der Gegenstand essbar ist oder nicht.
- * @param name des Essbaren Gegenstandes
- */
+	/**
+	 * Diese Methode erlaubt es dem Spieler einen Gegenstand zu essen.
+	 * Dabei muss geprueft werden ob der Gegenstand essbar ist oder nicht.
+	 * @param name des Essbaren Gegenstandes
+	 */
 	public void essen(String name) {
 		for(Gegenstand g: this.gegenstaende) {
 			if(g.getName().equalsIgnoreCase(name)) {
@@ -122,10 +122,11 @@ public class Spieler {
 					Essen e=(Essen)g;
 					this.tragkraft+=e.getBonus();
 					this.gegenstaende.remove(g);
+
 					return;
+
 				}
 			}
 		}
 	}
 }
-
