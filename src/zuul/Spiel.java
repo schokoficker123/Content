@@ -48,7 +48,7 @@ public class Spiel
         this.commands.put("drop", new DropCommand(this.spieler));
         this.commands.put("eat", new EatCommand(this.spieler));
         this.commands.put("quit", new QuitCommand(this));
-        this.commands.put("sleep", new SleepCommand(this.spieler));
+        this.commands.put("quest", new QuestCommand());
     }
 
     private void raeumeAnlegen()
