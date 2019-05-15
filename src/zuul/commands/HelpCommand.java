@@ -18,14 +18,14 @@ public class HelpCommand implements CommandFunction {
     /**
      * Gib Hilfsinformationen aus.
      * Hier geben wir eine etwas alberne und unklare Beschreibung
-     * aus, sowie eine Liste der Befehlsw�rter.
+     * aus, sowie eine Liste der Befehlswoerter.
      */
     private void hilfstextAusgeben()
     {
         System.out.println("Sie haben sich verlaufen. Sie sind allein.");
         System.out.println("Sie irren in der Welt von Zuul herum");
         System.out.println();
-        System.out.println("Ihnen stehen folgende Befehle zur Verfügung:");
+        System.out.println("Ihnen stehen folgende Befehle zur Verfuegung:");
         System.out.println("   " + this.parser.getAlleBefehle());
     }
 }

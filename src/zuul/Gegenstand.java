@@ -6,6 +6,8 @@ public class Gegenstand {
     private String beschreibung;
     private int gewicht;
     private boolean essbar;
+    
+       
 
     public Gegenstand(String name, String beschreibung, int gewicht) {
         this.beschreibung=beschreibung;
@@ -13,10 +15,17 @@ public class Gegenstand {
         this.gewicht=gewicht;
     }
 
+    /**
+     * 
+     * @return name / Beschreibung / Gewicht
+     */
+    
+    
     @Override
     public String toString() {
         return name + ", " + this.beschreibung +", " + this.gewicht+"kg";
     }
+
 
     public int getGewicht() {
         return this.gewicht;

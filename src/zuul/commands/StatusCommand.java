@@ -14,7 +14,9 @@ public class StatusCommand implements CommandFunction {
     public void execute(Befehl befehl) {
         status();
     }
-
+/**
+ * Zeigt den Status an.
+ */
     private void status() {
         System.out.println(this.spieler.zeigeStatus());
     }

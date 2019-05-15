@@ -14,7 +14,12 @@ public class LookCommand implements CommandFunction {
     public void execute(Befehl befehl) {
         umsehen();
     }
-
+/**
+ * Mit diesem Befehl kannst du dir anzeigne 
+ * lassen in welchem Raum du bist, 
+ * welche Gegenstaende es dort gibt und 
+ * welche Ausgaenge in welcher Richtung.
+ */
     private void umsehen() {
 
         System.out.println(this.spieler.getAktuellerRaum().getLangeBeschreibung());
