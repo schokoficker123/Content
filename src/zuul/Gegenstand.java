@@ -4,12 +4,12 @@ public class Gegenstand {
 
     private String name;
     private String beschreibung;
-    private int gewicht;
+    private double gewicht;
     private boolean essbar;
     
        
 
-    public Gegenstand(String name, String beschreibung, int gewicht) {
+    public Gegenstand(String name, String beschreibung, double gewicht) {
         this.beschreibung=beschreibung;
         this.name=name;
         this.gewicht=gewicht;
@@ -27,7 +27,7 @@ public class Gegenstand {
     }
 
 
-    public int getGewicht() {
+    public double getGewicht() {
         return this.gewicht;
     }
 
