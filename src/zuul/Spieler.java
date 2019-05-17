@@ -125,34 +125,9 @@ public class Spieler {
 
 					return;
 
-<<<<<<< HEAD
-    public Raum getAktuellerRaum() {
-        return aktuellerRaum;
-    }
-    
-    
-    public void essen(String name) {
-        for(Gegenstand g: this.gegenstaende) {
-            if(g.getName().equalsIgnoreCase(name)) {
-                // Ist g ein Objekt vom Typ Essen
-                if(g instanceof Essen) {
-                    Essen e=(Essen)g;
-                    this.tragkraft+=e.getBonus();
-                    this.gegenstaende.remove(g);
-                    return;
-                }
-            }
-        }
-    }
-
-    public void sleep() {
-
-        System.out.println("Ich schlaf dann mal");
-    }
-=======
 				}
 			}
 		}
 	}
->>>>>>> 494dfa277f0c11fe9c9cd7eb427f07bbd6b724de
+
 }

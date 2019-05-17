@@ -1,13 +1,17 @@
 package zuul;
 
+import java.util.ArrayList;
+
 public class WorldGenerator {
 	private Raum piratenschiff, piratenhoehle, piratenbucht, lichtung, sumpf, hexenhaus, dungeon, ebene1, ebene2, bossraum, wald, marktplatz, rathaus, schmied, taverne, gasthaus, keller, geheimgang; 
-
+	private ArrayList<NPC> npc;
+	
 	public WorldGenerator() {
 		this.raeumeAnlegen();
 		this.setzeAusgaenge();
 		this.addGegenstaende();
 		this.addNPC();
+		
 	}
 
 	private void raeumeAnlegen() {
