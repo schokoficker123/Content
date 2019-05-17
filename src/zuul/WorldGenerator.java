@@ -50,6 +50,7 @@ public class WorldGenerator {
 		taverne.setAusgang("west", marktplatz);
 		taverne.setAusgang("up", gasthaus);
 		taverne.setAusgang("down", keller);
+		gasthaus.setAusgang("down", taverne);
 		keller.setAusgang("up", taverne);
 		keller.setAusgang("down", geheimgang);
 		geheimgang.setAusgang("up", keller);
@@ -79,7 +80,7 @@ public class WorldGenerator {
 	}
 
 /**
- * Diese Methode fügt Gegenstaende in bestimmten Rauemn ein.
+ * Diese Methode fügt Gegenstaende in bestimmten Rauemen ein.
  */
 	private void addGegenstaende() {
 		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 2));
