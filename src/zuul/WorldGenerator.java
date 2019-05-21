@@ -8,9 +8,12 @@ public class WorldGenerator {
         this.setzeAusgaenge();
         this.addGegenstaende();
         this.addNPC();
+        this.addQuest();
     }
 
-    private void raeumeAnlegen() {
+
+
+	private void raeumeAnlegen() {
        
     	// die Rauume erstellen
     	lichtung = new Raum("auf einer Lichtung, umgeben von dunklen Tannen");
@@ -93,5 +96,11 @@ public class WorldGenerator {
         return this.marktplatz;
     }
 
-
+    private void addQuest() {
+		// quests adden
+    	taverne.addQuest(new Quest("Barceeper`s Quest:", "Finde den Ring vom alten Gibbs"));
+    	
+    	
+		
+    }
 }

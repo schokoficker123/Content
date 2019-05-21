@@ -21,6 +21,7 @@ public class Raum
 	private HashMap<String, Raum> ausgaenge;
 	private ArrayList<Gegenstand> gegenstaende;
 	private ArrayList<NPC> npc;
+	private ArrayList<Quest> quest;
 
 	/**
 	 * Erzeuge einen Raum mit einer Beschreibung. Ein Raum
@@ -31,6 +32,7 @@ public class Raum
 	public Raum(String beschreibung)
 	{
 		this.npc=new ArrayList<>();
+		this.quest=new ArrayList<>();
 		this.gegenstaende=new ArrayList<>();
 		this.ausgaenge=new HashMap<>();
 		this.beschreibung = beschreibung;
@@ -40,6 +42,10 @@ public class Raum
 		this.gegenstaende.add(neuerGegenstand);
 	}
 
+	public void addQuest(Quest neueQuest) {
+		this.quest.add(neueQuest);
+	}
+	
 	public void setNPC(NPC neuerNPC) {
 		this.npc.add(neuerNPC);
 	}

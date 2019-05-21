@@ -39,6 +39,7 @@ public class Spiel
         raeumeAnlegen();
         parser = new Parser();
         this.commands=new HashMap<>();
+        
 
         this.commands.put("go", new GoCommand(this.spieler));
         this.commands.put("help", new HelpCommand(this.parser));
@@ -48,12 +49,12 @@ public class Spiel
         this.commands.put("drop", new DropCommand(this.spieler));
         this.commands.put("eat", new EatCommand(this.spieler));
         this.commands.put("quit", new QuitCommand(this));
-        this.commands.put("quest", new QuestCommand());
+        //this.commands.put("quest", new QuestCommand());
     }
 
     private void raeumeAnlegen()
     {
-        this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf der Lichtung
+        this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf dem Marktplatz
     }
 
     public void quit() {
