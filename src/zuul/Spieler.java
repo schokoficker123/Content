@@ -7,8 +7,10 @@ public class Spieler {
 	private Raum aktuellerRaum;
 	private double tragkraft;
 	private ArrayList<Gegenstand> gegenstaende;
+	private ArrayList<NPC> npc;
 
 	public Spieler() {
+		this.npc=new ArrayList<>();
 		this.gegenstaende=new ArrayList<>();
 		this.tragkraft = 30;
 	}
@@ -129,5 +131,6 @@ public class Spieler {
 			}
 		}
 	}
+	
 
 }
