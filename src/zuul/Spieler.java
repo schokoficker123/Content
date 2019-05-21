@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Spieler {
 
 	private Raum aktuellerRaum;
-	private int tragkraft;
+	private double tragkraft;
 	private ArrayList<Gegenstand> gegenstaende;
 
 	public Spieler() {
@@ -13,8 +13,8 @@ public class Spieler {
 		this.tragkraft = 30;
 	}
 
-	public int ermittleGewicht() {
-		int gesamtgewicht=0;
+	public double ermittleGewicht() {
+		double gesamtgewicht=0;
 
 		// this.gegenstaende wird durchlaufen
 		// Jeder Gegenstand in der Liste wird einmal
@@ -129,4 +129,5 @@ public class Spieler {
 			}
 		}
 	}
+
 }

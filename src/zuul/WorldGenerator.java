@@ -1,13 +1,17 @@
 package zuul;
 
+import java.util.ArrayList;
+
 public class WorldGenerator {
 	private Raum piratenschiff, piratenhoehle, piratenbucht, lichtung, sumpf, hexenhaus, dungeon, ebene1, ebene2, bossraum, wald, marktplatz, rathaus, schmied, taverne, gasthaus, keller, geheimgang; 
-
+	private ArrayList<NPC> npc;
+	
 	public WorldGenerator() {
 		this.raeumeAnlegen();
 		this.setzeAusgaenge();
 		this.addGegenstaende();
 		this.addNPC();
+		
 	}
 
 	private void raeumeAnlegen() {
@@ -83,15 +87,15 @@ public class WorldGenerator {
  * Diese Methode fügt Gegenstaende in bestimmten Rauemen ein.
  */
 	private void addGegenstaende() {
-		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 2));
-		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit Sosse", 5 ));
-		piratenhoehle.gegenstandAblegen(new Gegenstand("Schatztruhe", "eine mit Gold gefuellte Holzkiste", 40));
-		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensäbel", "ein gekrümmtes Säbel eines lang verstorbenen Matrosen", 8));
-		piratenhoehle.gegenstandAblegen(new Gegenstand("Schwert", "das Schwert des alten Piratenkapitaens", 10));
-		sumpf.gegenstandAblegen(new Essen("Regenwurm", "ein kleiner Wurm den man bei Hungersnot essen kann", 1, 2)); 
-		sumpf.gegenstandAblegen(new Essen("Pilz", "ein seltsam aussehender Pilz", 1, 20));
-		lichtung.gegenstandAblegen(new Gegenstand("Korb", "ein Weidenkorb gefuellt mit Brot", 4));
-		lichtung.gegenstandAblegen(new Essen("Muffin", "lecker lecker", 1, 5)); 
+		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 1.6));
+		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit Sosse", 3.4 ));
+		piratenhoehle.gegenstandAblegen(new Gegenstand("Schatztruhe", "eine mit Gold gefuellte Holzkiste", 40.0));
+		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensäbel", "ein gekrümmtes Säbel eines lang verstorbenen Matrosen", 8.0));
+		piratenhoehle.gegenstandAblegen(new Gegenstand("Schwert", "das Schwert des alten Piratenkapitaens", 10.0));
+		sumpf.gegenstandAblegen(new Essen("Regenwurm", "ein kleiner Wurm den man bei Hungersnot essen kann", 0.1, 2)); 
+		sumpf.gegenstandAblegen(new Essen("Pilz", "ein seltsam aussehender Pilz", 0.2, 20));
+		lichtung.gegenstandAblegen(new Gegenstand("Korb", "ein Weidenkorb gefuellt mit Brot", 4.0));
+		lichtung.gegenstandAblegen(new Essen("Muffin", "lecker lecker", 0.3, 5)); 
 	}
 
 	private void addNPC() {

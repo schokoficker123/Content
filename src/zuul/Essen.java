@@ -10,7 +10,7 @@ public class Essen extends Gegenstand{
      * der Bonus Wert wird returnt
      */
      
-    public Essen(String name, String beschreibung, int gewicht, int bonus) {
+    public Essen(String name, String beschreibung, double gewicht, int bonus) {
 
         super(name, beschreibung, gewicht);
         this.bonus=bonus;
