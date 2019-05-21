@@ -23,6 +23,7 @@ import zuul.commands.*;
 import java.util.HashMap;
 
 public class Spiel
+
 {
 
     private Parser parser;
@@ -32,7 +33,7 @@ public class Spiel
     
 
     /**
-     * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
+     * Erzeugt ein Spiel
      */
     public Spiel()
     {
@@ -54,7 +55,7 @@ public class Spiel
         this.commands.put("npcspeak", new NPCSpeakCommand(this.spieler));
     }
 
-	
+	 
 	private void raeumeAnlegen()
 	{
 		this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf der Lichtung
