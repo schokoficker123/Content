@@ -23,3 +23,4 @@ public class NPCSpeakCommand implements CommandFunction {
 
 	}
 }
+ 

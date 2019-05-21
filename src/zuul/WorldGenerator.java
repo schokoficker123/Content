@@ -24,7 +24,7 @@ public class WorldGenerator {
 		lichtung = new Raum("auf einer Lichtung, umgeben von dunklen Tannen");
 		piratenschiff = new Raum("auf der Black Pearl");
 		taverne = new Raum("in der Taverne, mit zwielichten Gestalten an der Theke");
-		hexenhaus = new Raum("im Hexenhaus");
+		hexenhaus=new Raum("im alten Hexenhaus von Tia Dalma");
 		piratenbucht = new Raum("in der alten Piratenbucht");
 		piratenhoehle = new Raum("in einer alten gruseligen Piratenhoehle");
 		keller = new Raum("im Keller der Taverne");
@@ -38,7 +38,7 @@ public class WorldGenerator {
 		wald=new Raum("im Wald, vorsicht.. Nicht verlaufen");
 		marktplatz=new Raum("auf dem Marktplatz, viele verschiedene gestalten wuseln umher");
 		rathaus=new Raum("im Rathaus, hier herscht Norrington über das Land");
-		schmied=new Raum("bei der Schmiedin Tia Dalma");
+		schmied=new Raum("in der Schmiede des alten Jankins");
 
 	}
 

@@ -25,29 +25,6 @@ import java.util.HashMap;
 public class Spiel
 {
 
-<<<<<<< HEAD
-	/**
-	 * Erzeuge ein Spiel und initialisiere die interne Raumkarte.
-	 */
-	public Spiel()
-	{
-		this.beendet=false;
-		this.spieler=new Spieler();
-		raeumeAnlegen();
-		parser = new Parser();
-		this.commands=new HashMap<>();
-
-		this.commands.put("go", new GoCommand(this.spieler));
-		this.commands.put("help", new HelpCommand(this.parser));
-		this.commands.put("look", new LookCommand(this.spieler));
-		this.commands.put("status", new StatusCommand(this.spieler));
-		this.commands.put("take", new TakeCommand(this.spieler));
-		this.commands.put("drop", new DropCommand(this.spieler));
-		this.commands.put("eat", new EatCommand(this.spieler));
-		this.commands.put("quit", new QuitCommand(this));
-
-	}
-=======
     private Parser parser;
     private Spieler spieler;
     private HashMap<String, CommandFunction> commands;
@@ -77,9 +54,6 @@ public class Spiel
         this.commands.put("npcspeak", new NPCSpeakCommand(this.spieler));
     }
 
-	
-	
->>>>>>> 8eb2b6d21bb44073aabff3722ea02a83bf29e18d
 	
 	private void raeumeAnlegen()
 	{
