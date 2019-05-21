@@ -55,8 +55,6 @@ public class Spiel
     }
 
 	
-	
-	
 	private void raeumeAnlegen()
 	{
 		this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf der Lichtung
