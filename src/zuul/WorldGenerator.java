@@ -38,7 +38,7 @@ public class WorldGenerator {
 		bossraum=new Raum("im Bossraum");
 		wald=new Raum("im Wald, vorsicht.. Nicht verlaufen");
 		marktplatz=new Raum("auf dem Marktplatz, viele verschiedene gestalten wuseln umher");
-		rathaus=new Raum("im Rathaus, hier herscht Norrington über das Land");
+		rathaus=new Raum("im Rathaus, hier herscht Norrington ï¿½ber das Land");
 		schmied=new Raum("in der Schmiede des alten Jankins");
 
 	}
@@ -85,13 +85,13 @@ public class WorldGenerator {
 	}
 
 /**
- * Diese Methode fügt Gegenstaende in bestimmten Rauemen ein.
+ * Diese Methode fï¿½gt Gegenstaende in bestimmten Rauemen ein.
  */
 	private void addGegenstaende() {
 		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 1.6));
 		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit Sosse", 3.4 ));
 		piratenhoehle.gegenstandAblegen(new Gegenstand("Schatztruhe", "eine mit Gold gefuellte Holzkiste", 40.0));
-		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensäbel", "ein gekrümmtes Säbel eines lang verstorbenen Matrosen", 8.0));
+		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensï¿½bel", "ein gekrï¿½mmtes Sï¿½bel eines lang verstorbenen Matrosen", 8.0));
 		piratenhoehle.gegenstandAblegen(new Gegenstand("Schwert", "das Schwert des alten Piratenkapitaens", 10.0));
 		sumpf.gegenstandAblegen(new Essen("Regenwurm", "ein kleiner Wurm den man bei Hungersnot essen kann", 0.1, 2)); 
 		sumpf.gegenstandAblegen(new Essen("Pilz", "ein seltsam aussehender Pilz", 0.2, 20));
@@ -113,5 +113,11 @@ public class WorldGenerator {
 		return this.marktplatz;
 	}
 
-
+    private void addQuest() {
+		// quests adden
+    	taverne.addQuest(new Quest("Barceeper`s Quest:", "Finde den Ring vom alten Gibbs"));
+    	
+    	
+		
+    }
 }

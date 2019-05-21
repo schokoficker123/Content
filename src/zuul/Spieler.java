@@ -66,7 +66,7 @@ public class Spieler {
 		}
 	}
 	/**
-	 * Diese Methode sorgt dafuer das der Spieler seine Gegenstände im Inventar ablegen kann "droppen".
+	 * Diese Methode sorgt dafuer das der Spieler seine Gegenstï¿½nde im Inventar ablegen kann "droppen".
 	 * @param name des Gegenstandes
 	 * @return Ob der Gegenstand gefunden wurde oder nicht, wurde er gefunden, wird er abgelegt
 	 */
