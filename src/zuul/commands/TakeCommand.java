@@ -9,12 +9,17 @@ public class TakeCommand implements CommandFunction {
     public TakeCommand(Spieler spieler) {
         this.spieler = spieler;
     }
-
+/**
+ * @param befehl
+ */
     @Override
     public void execute(Befehl befehl) {
         gegenstandAufnehmen(befehl);
     }
-
+/**
+ * Gibt aus ob der Gegenstand aufgenommen wurde oder nicht.
+ * @param befehl
+ */
     private void gegenstandAufnehmen(Befehl befehl) {
 
         boolean geklappt=this.spieler.gegenstandAufnehmen(befehl.gibZweitesWort());

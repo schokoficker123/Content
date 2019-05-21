@@ -5,16 +5,18 @@ import java.util.ArrayList;
 public class Spieler {
 
 	private Raum aktuellerRaum;
-	private int tragkraft;
+	private double tragkraft;
 	private ArrayList<Gegenstand> gegenstaende;
+	private ArrayList<NPC> npc;
 
 	public Spieler() {
+		this.npc=new ArrayList<>();
 		this.gegenstaende=new ArrayList<>();
 		this.tragkraft = 30;
 	}
 
-	public int ermittleGewicht() {
-		int gesamtgewicht=0;
+	public double ermittleGewicht() {
+		double gesamtgewicht=0;
 
 		// this.gegenstaende wird durchlaufen
 		// Jeder Gegenstand in der Liste wird einmal
@@ -30,18 +32,24 @@ public class Spieler {
 
 	 *
 	 * Dieser Gegenstand sollte dann im aktuellen Raum
-	 * gesucht werden (Methode dafür erstellen!).
+	 * gesucht werden (Methode dafuer erstellen!).
 	 * Sofern dieser Gegenstand mit diesem Namen
-	 * existiert und sofern die Tragkraft es zulässt,
+	 * existiert und sofern die Tragkraft es zulaesst,
 	 * wird dieser Gegenstand aufgenommen.
 	 *
-	 * Das bedeutet natürlich, dass der Raum diesen
+	 * Das bedeutet natuerlich, dass der Raum diesen
 	 * Gegenstand dann nicht mehr haben kann
-	 * (Methode dafür erstellen!).
+	 * (Methode dafuer erstellen!).
 	 *
 	 * Die Methode gegenstandAufnehmen() liefert dann
-	 * true oder false zurück, je nachdem ob es
+	 * true oder false zurueck, je nachdem ob es
 	 * geklappt hat oder nicht.
+	 */
+
+	/**
+	 * 
+	 * @param name des gegenstandes den der Spieler aufnehmen soll.
+	 * @return ob der Spieler gnug Tragkraft hat um den Gegenstand zu tragen oder nicht.
 	 */
 	public boolean gegenstandAufnehmen(String name) {
 		Gegenstand gesucht=this.aktuellerRaum.sucheGegenstand(name);
@@ -57,7 +65,11 @@ public class Spieler {
 			}
 		}
 	}
-
+	/**
+	 * Diese Methode sorgt dafuer das der Spieler seine Gegenst�nde im Inventar ablegen kann "droppen".
+	 * @param name des Gegenstandes
+	 * @return Ob der Gegenstand gefunden wurde oder nicht, wurde er gefunden, wird er abgelegt
+	 */
 	public boolean gegenstandAblegen(String name) {
 		for(Gegenstand g: this.gegenstaende) {
 			if(g.getName().equalsIgnoreCase(name)) {
@@ -71,6 +83,10 @@ public class Spieler {
 		// nicht gefunden
 		return false;
 	}
+	/**
+	 * Diese Methode listet das Gewicht das man noch tragen kann in KG auf.
+	 * @return erg
+	 */
 
 	public String zeigeStatus() {
 		String erg="Ich kann insgesamt ";
@@ -81,15 +97,25 @@ public class Spieler {
 		erg+=this.tragkraft-ermittleGewicht() + "kg kann ich noch tragen!";
 		return erg;
 	}
-
+	/**
+	 * Diese Methode erlaubt es dme Spieler von Raum zu Raum zu gehen.
+	 * @param raum
+	 */
 	public void geheZu(Raum raum) {
 		this.aktuellerRaum=raum;
 	}
-
+	/**
+	 * 
+	 * @return Aktueller Raum, wo sich der Spieler befindet
+	 */
 	public Raum getAktuellerRaum() {
 		return aktuellerRaum;
 	}
-
+	/**
+	 * Diese Methode erlaubt es dem Spieler einen Gegenstand zu essen.
+	 * Dabei muss geprueft werden ob der Gegenstand essbar ist oder nicht.
+	 * @param name des Essbaren Gegenstandes
+	 */
 	public void essen(String name) {
 		for(Gegenstand g: this.gegenstaende) {
 			if(g.getName().equalsIgnoreCase(name)) {
@@ -98,9 +124,13 @@ public class Spieler {
 					Essen e=(Essen)g;
 					this.tragkraft+=e.getBonus();
 					this.gegenstaende.remove(g);
+
 					return;
+
 				}
 			}
 		}
 	}
+	
+
 }

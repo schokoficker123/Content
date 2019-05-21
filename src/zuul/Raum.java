@@ -1,10 +1,10 @@
 /**
- * Diese Klasse modelliert R�ume in der Welt von Zuul.
+ * Diese Klasse modelliert Raueme in der Welt von Zuul.
  *
- * Ein "Raum" repr�sentiert einen Ort in der virtuellen Landschaft des
- * Spiels. Ein Raum ist mit anderen R�umen �ber Ausg�nge verbunden.
- * M�gliche Ausg�nge liegen im Norden, Osten, S�den und Westen.
- * F�r jede Richtung h�lt ein Raum eine Referenz auf den 
+ * Ein "Raum" repraesentiert einen Ort in der virtuellen Landschaft des
+ * Spiels. Ein Raum ist mit anderen Rauemen ueber Ausgaenge verbunden.
+ * Moegliche Ausgaenge liegen im Norden, Osten, Sueden und Westen.
+ * Fuer jede Richtung haelt ein Raum eine Referenz auf den 
  * benachbarten Raum.
  *
  * @author  Michael Kolling and David J. Barnes
@@ -25,9 +25,9 @@ public class Raum
 
 	/**
 	 * Erzeuge einen Raum mit einer Beschreibung. Ein Raum
-	 * hat anfangs keine Ausg�nge.
-	 * @param beschreibung enth�lt eine Beschreibung in der Form
-	 *        "in einer K�che" oder "auf einem Sportplatz".
+	 * hat anfangs keine Ausgaenge.
+	 * @param beschreibung enthaelt eine Beschreibung in der Form
+	 *        "in einer Kueche" oder "auf einem Sportplatz".
 	 */
 	public Raum(String beschreibung)
 	{
@@ -37,10 +37,18 @@ public class Raum
 		this.ausgaenge=new HashMap<>();
 		this.beschreibung = beschreibung;
 	}
+	/**
+	 * 
+	 * @param neuerGegenstand
+	 */
 
 	public void gegenstandAblegen(Gegenstand neuerGegenstand) {
 		this.gegenstaende.add(neuerGegenstand);
 	}
+	/**
+	 * 
+	 * @param neuerNPC
+	 */
 
 	public void addQuest(Quest neueQuest) {
 		this.quest.add(neueQuest);
@@ -49,32 +57,49 @@ public class Raum
 	public void setNPC(NPC neuerNPC) {
 		this.npc.add(neuerNPC);
 	}
+	/**
+	 * 
+	 * @param richtung
+	 * @param nachbar
+	 */
 
 	public void setAusgang(String richtung, Raum nachbar) {
 		this.ausgaenge.put(richtung, nachbar);
 	}
+	/**
+	 * 
+	 * @param name
+	 * @return Name des Ausganges
+	 */
 
 	public Raum getAusgang(String name) {
 		return this.ausgaenge.get(name);
+	
 	}
 
 	public String getLangeBeschreibung() {
-		String erg=  "Sie sind " + this.beschreibung + "\nAusgänge: " + this.ausgaengeToString();
+		String erg=  "Sie sind " + this.beschreibung + "\nAusgaenge: " + this.ausgaengeToString();
 		if(this.gegenstaende.size()>0) {
-			erg+="\nGegenstände in diesem Raum:\n";
+			erg+="\nGegenstaende in diesem Raum:\n";
 			for(Gegenstand g: this.gegenstaende) {
 				erg+=" - " + g.toString() + "\n";
 			}
 		}
-
+	
 		if(this.npc.size()>0) {
 			erg+="\nNPCs:\n";
 			for(NPC np: this.npc) {
-				erg+=" - " + np.toString() + "\n";
+				erg+=" - " + np.npcName() + "\n";
 			}
 		}
+	 
 		return erg;
+
 	}
+	/**
+	 * 
+	 * @return erg
+	 */
 
 	public String ausgaengeToString() {
 		String erg="";
@@ -91,7 +116,10 @@ public class Raum
 	{
 		return beschreibung;
 	}
-
+/**
+ * 
+ * @param gesucht
+ */
 	public void entferneGegenstand(Gegenstand gesucht) {
 		this.gegenstaende.remove(gesucht);
 	}
@@ -99,7 +127,7 @@ public class Raum
 	public Gegenstand sucheGegenstand(String name) {
 		for(Gegenstand g: this.gegenstaende) {
 			// if(g.getName() == name) --> funktioniert nicht,
-			// da hier nur die Referenz auf Gleichheit geprüft wird
+			// da hier nur die Referenz auf Gleichheit geprueft wird
 			// d.h. ob die im gleichen Speicher stehen
 			if(g.getName().equalsIgnoreCase(name)) {
 				return g;
@@ -109,6 +137,19 @@ public class Raum
 		// Falls diese Stelle erreicht wird, wurde kein
 		// Gegenstand gefunden
 		return null;
+	}
+
+	public String getNPC() {
+		String erg = "";
+		if(this.npc.size()>0) {
+			erg+="\nNPCs:\n";
+			for(NPC np: this.npc) {
+				erg+=" - " + np.toString();
+			}
+			return erg;
+		}else {
+			return null;
+		}
 	}
 
 }

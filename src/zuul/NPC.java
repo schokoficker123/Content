@@ -10,9 +10,12 @@ public class NPC {
 	        this.name=name;
 	    }
 
-	    @Override
+		@Override
 	    public String toString() {
 	        return name + ", " + this.text;
+	    }
+		public String npcName() {
+	        return name;
 	    }
 
 	    public String getName() {
