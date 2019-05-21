@@ -14,6 +14,9 @@ public class NPC {
 	    public String toString() {
 	        return name + ", " + this.text;
 	    }
+		public String npcName() {
+	        return name;
+	    }
 
 	    public String getName() {
 	        return this.name;

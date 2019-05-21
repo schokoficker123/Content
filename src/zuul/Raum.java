@@ -79,14 +79,16 @@ public class Raum
 				erg+=" - " + g.toString() + "\n";
 			}
 		}
-
+	
 		if(this.npc.size()>0) {
 			erg+="\nNPCs:\n";
 			for(NPC np: this.npc) {
-				erg+=" - " + np.toString() + "\n";
+				erg+=" - " + np.npcName() + "\n";
 			}
 		}
+	 
 		return erg;
+
 	}
 	/**
 	 * 
@@ -131,16 +133,17 @@ public class Raum
 		return null;
 	}
 
-	public NPC getNPC(String string) {
-		String erg = null;
+	public String getNPC() {
+		String erg = "";
 		if(this.npc.size()>0) {
 			erg+="\nNPCs:\n";
 			for(NPC np: this.npc) {
-				erg+=" - " + np.toString() + "\n";
+				erg+=" - " + np.toString();
 			}
+			return erg;
+		}else {
+			return null;
 		}
-		
-		return null;
 	}
 
 }
