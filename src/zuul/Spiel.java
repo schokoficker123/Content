@@ -52,6 +52,8 @@ public class Spiel
         this.commands.put("eat", new EatCommand(this.spieler));
         this.commands.put("quit", new QuitCommand(this));
         this.commands.put("speak", new NPCSpeakCommand(this.spieler));
+        this.commands.put("quests", new QuestCommand(this.spieler));
+        this.commands.put("questaccept", new QuestAcceptCommand(this.spieler));
     }
 
 	

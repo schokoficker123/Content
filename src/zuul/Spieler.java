@@ -7,10 +7,12 @@ public class Spieler {
 	private Raum aktuellerRaum;
 	private double tragkraft;
 	private ArrayList<Gegenstand> gegenstaende;
-	private ArrayList<NPC> npc;
+	private ArrayList<NPC> quest;
+	private ArrayList<NPC> questkurz;
 
 	public Spieler() {
-		this.npc=new ArrayList<>();
+		this.quest=new ArrayList<>();
+		this.questkurz=new ArrayList<>();
 		this.gegenstaende=new ArrayList<>();
 		this.tragkraft = 30;
 	}
@@ -87,6 +89,21 @@ public class Spieler {
 	 * Diese Methode listet das Gewicht das man noch tragen kann in KG auf.
 	 * @return erg
 	 */
+	public boolean questAnnehmen(String kurz) {
+		NPC gesucht=this.aktuellerRaum.sucheQuest(kurz);
+		if(gesucht==null) {
+			return false;
+		} else {
+			if(gesucht!=null) {
+				this.quest.add(gesucht);
+				this.aktuellerRaum.entferneQuest(gesucht);	
+				return true;
+			}else {
+				return false;
+			}
+		}
+	}
+	
 
 	public String zeigeStatus() {
 		String erg="Ich kann insgesamt ";
@@ -131,6 +148,21 @@ public class Spieler {
 			}
 		}
 	}
-	
+	public String getKurzBeschreibung() {
+		String erg = "";
+		if(this.quest.size()>0) {
+			erg+="\nQuests:\n";
+			for(NPC qu: this.quest) {
+				erg+=" - " + qu.getKurz();
+			}
+			return erg;
+		} else {
+			return null;
+		}
+
+	}
+	public void quests(String kurz) {
+
+	}
 
 }

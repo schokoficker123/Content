@@ -21,7 +21,7 @@ public class Raum
 	private HashMap<String, Raum> ausgaenge;
 	private ArrayList<Gegenstand> gegenstaende;
 	private ArrayList<NPC> npc;
-	private ArrayList<Quest> quest;
+	private ArrayList<NPC> quest;
 
 	/**
 	 * Erzeuge einen Raum mit einer Beschreibung. Ein Raum
@@ -50,8 +50,8 @@ public class Raum
 	 * @param neuerNPC
 	 */
 
-	public void addQuest(Quest neueQuest) {
-		this.quest.add(neueQuest);
+	public void addQuest(NPC kurz) {
+		this.quest.add(kurz);
 	}
 	
 	public void setNPC(NPC neuerNPC) {
@@ -138,6 +138,25 @@ public class Raum
 		// Gegenstand gefunden
 		return null;
 	}
+	
+	public void entferneQuest(NPC gesucht) {
+		this.npc.remove(gesucht);
+	}
+	
+	public NPC sucheQuest(String kurz) {
+		for(NPC n: this.npc) {
+			// if(g.getName() == name) --> funktioniert nicht,
+			// da hier nur die Referenz auf Gleichheit geprueft wird
+			// d.h. ob die im gleichen Speicher stehen
+			if(n.getKurz().equalsIgnoreCase(kurz)) {
+				return n;
+				// Dieses return beendet die Methode
+			}
+		}
+		// Falls diese Stelle erreicht wird, wurde kein
+		// Gegenstand gefunden
+		return null;
+	}
 
 	public String getNPC() {
 		String erg = "";
@@ -151,5 +170,6 @@ public class Raum
 			return null;
 		}
 	}
+	
 
 }
