@@ -69,8 +69,9 @@ public class Spiel
 	/**
 	 * Die Hauptmethode zum Spielen. Laueft bis zum Ende des Spiels
 	 * in einer Schleife.
+	 * @throws InterruptedException 
 	 */
-	public void spielen()
+	public void spielen() throws InterruptedException
 	{
 		willkommenstextAusgeben();
 
@@ -81,15 +82,26 @@ public class Spiel
 			Befehl befehl = parser.liefereBefehl();
 			verarbeiteBefehl(befehl);
 		}
+		for (int i=0;i<=100;i+=20) {
+			System.out.println("Laden: " + i + "%");
+			Thread.sleep(1000);
+		}
+
 		System.out.println("Danke fuers Spielen. Auf Wiedersehen.");
 	}
 
 	/**
 	 * Einen Begruessungstext fuer den Spieler ausgeben.
+	 * @throws InterruptedException 
 	 */
-	private void willkommenstextAusgeben()
+	private void willkommenstextAusgeben() throws InterruptedException
 	{
 		System.out.println();
+		System.out.println("Zuul wird geladen..");
+		for (int i=0;i<=100;i+=20) {
+			System.out.println("Laden: " + i + "%");
+			Thread.sleep(1000);
+		}
 		System.out.println("Willkommen zu Zuul!");
 		System.out.println("Entdecke die Welt von Zuul. Doch Vorsicht, ueberall lauern Gefahren!");
 		System.out.println("Tippen sie 'help', wenn Sie Hilfe brauchen.");
