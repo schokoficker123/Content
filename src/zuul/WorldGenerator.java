@@ -109,12 +109,13 @@ public class WorldGenerator {
 				 +"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. Auf hoher See ich früher war! \n"
 				 +"Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
 				 "ring",
-				 "Finde den Ring vom alten Gibbs"));
+				 "Finde den Ring vom alten Gibbs \n"));
 		
-		rathaus.setNPC(new NPC("Norrington",
-				 "Willkommen im Rathaus",
+		rathaus.setNPC(new NPC("Leutnant Norrington",
+				 "Willkommen im Rathaus, in diesem Dorf herrschte schon lange friede, doch jetzt musst du in die Dorfschmiede \n"
+				+ "Danach bezwinge den Kerker (Dungeon) und töte dort den Anwärter (Boss)!",
 				 "schwert",
-				 "Kaufe dir ein besseres Schwert um den dungeon zu bezwingen"));
+				 "Kaufe dir ein besseres Schwert um den dungeon zu bezwingen \n"));
 	}
 /**
  * Der Startraum soll der Marktplatz sein.
