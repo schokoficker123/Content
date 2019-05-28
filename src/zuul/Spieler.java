@@ -86,23 +86,23 @@ public class Spieler {
 		return false;
 	}
 	/**
-	 * Diese Methode listet das Gewicht das man noch tragen kann in KG auf.
+	 * Diese Methode überprüft ob eine Quest mit passendem namen in dem bestimmten Raum vorhanden ist.
 	 * @return erg
 	 */
-	public boolean questAnnehmen(String kurz) {
-		NPC gesucht=this.aktuellerRaum.sucheQuest(kurz);
+	public boolean questAnnehmen(String questname) {
+		NPC gesucht=this.aktuellerRaum.sucheQuest(questname);
 		if(gesucht==null) {
 			return false;
-		} else {
+		} 
 			if(gesucht!=null) {
 				this.quest.add(gesucht);
 				this.aktuellerRaum.entferneQuest(gesucht);	
 				return true;
-			}else {
+			} else {
 				return false;
 			}
 		}
-	}
+	
 	
 
 	public String zeigeStatus() {
@@ -159,9 +159,6 @@ public class Spieler {
 		} else {
 			return null;
 		}
-
-	}
-	public void quests(String kurz) {
 
 	}
 

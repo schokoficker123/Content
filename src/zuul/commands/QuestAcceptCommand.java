@@ -2,6 +2,7 @@ package zuul.commands;
 
 import zuul.Befehl;
 import zuul.Spieler;
+import zuul.NPC;
 
 public class QuestAcceptCommand implements CommandFunction {
     private Spieler spieler;
@@ -26,7 +27,7 @@ public class QuestAcceptCommand implements CommandFunction {
         if(geklappt) {
             System.out.println("Quest angenommen");
         } else {
-            System.out.println("Fehler");
+            System.out.println("In diesem Raum gibt es diese Quest nicht oder du hast den Questnamen nicht angegeben!");
         }
     }
 }
