@@ -22,6 +22,7 @@ public class Raum
 	private ArrayList<Gegenstand> gegenstaende;
 	private ArrayList<NPC> npc;
 
+
 	/**
 	 * Erzeuge einen Raum mit einer Beschreibung. Ein Raum
 	 * hat anfangs keine Ausgaenge.
@@ -31,6 +32,7 @@ public class Raum
 	public Raum(String beschreibung)
 	{
 		this.npc=new ArrayList<>();
+
 		this.gegenstaende=new ArrayList<>();
 		this.ausgaenge=new HashMap<>();
 		this.beschreibung = beschreibung;
@@ -48,6 +50,9 @@ public class Raum
 	 * @param neuerNPC
 	 */
 
+	
+	
+	
 	public void setNPC(NPC neuerNPC) {
 		this.npc.add(neuerNPC);
 	}
@@ -68,7 +73,7 @@ public class Raum
 
 	public Raum getAusgang(String name) {
 		return this.ausgaenge.get(name);
-	
+		
 	}
 
 	public String getLangeBeschreibung() {

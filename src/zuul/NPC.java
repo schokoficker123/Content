@@ -12,7 +12,7 @@ public class NPC {
 
 		@Override
 	    public String toString() {
-	        return name + ", " + this.text;
+	        return name + ": \n" + this.text;
 	    }
 		public String npcName() {
 	        return name;
