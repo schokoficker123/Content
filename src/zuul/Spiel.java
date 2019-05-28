@@ -44,17 +44,17 @@ public class Spiel
         this.commands=new HashMap<>();
         
 
-        this.commands.put("go", new GoCommand(this.spieler));
-        this.commands.put("help", new HelpCommand(this.parser));
+        this.commands.put("go", new GoCommand(this.spieler));      
         this.commands.put("look", new LookCommand(this.spieler));
-        this.commands.put("status", new StatusCommand(this.spieler));
+        this.commands.put("speak", new NPCSpeakCommand(this.spieler));
+        this.commands.put("questaccept", new QuestAcceptCommand(this.spieler));
         this.commands.put("take", new TakeCommand(this.spieler));
         this.commands.put("drop", new DropCommand(this.spieler));
         this.commands.put("eat", new EatCommand(this.spieler));
-        this.commands.put("quit", new QuitCommand(this));
-        this.commands.put("speak", new NPCSpeakCommand(this.spieler));
+        this.commands.put("status", new StatusCommand(this.spieler));
         this.commands.put("quests", new QuestCommand(this.spieler));
-        this.commands.put("questaccept", new QuestAcceptCommand(this.spieler));
+        this.commands.put("quit", new QuitCommand(this));
+        this.commands.put("help", new HelpCommand(this.parser));
     }
 
 	 

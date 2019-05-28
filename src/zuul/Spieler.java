@@ -151,7 +151,7 @@ public class Spieler {
 	public String getKurzBeschreibung() {
 		String erg = "";
 		if(this.quest.size()>0) {
-			erg+="\nQuests:\n";
+			erg+="\nOffene Quests:\n";
 			for(NPC qu: this.quest) {
 				erg+=" - " + qu.getKurz();
 			}

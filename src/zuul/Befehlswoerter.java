@@ -12,7 +12,7 @@ public class Befehlswoerter
 {
     // ein konstantes Array mit den gueltigen Befehlswoertern
     private static final String gueltigeBefehle[] = {
-        "go", "look", "quit", "help", "take", "drop", "status", "eat", "sleep", "speak", "questaccept", "quests"
+        "go", "look", "speak", "questaccept", "take", "drop", "eat", "status", "quests", "quit", "help"
     };
 
     /**
@@ -26,7 +26,7 @@ public class Befehlswoerter
     public String getGueltigeBefehle() {
         String erg="";
         for(String s: gueltigeBefehle) {
-            erg+=s+" ";
+            erg+=s+" / ";
         }
         return erg;
     }
