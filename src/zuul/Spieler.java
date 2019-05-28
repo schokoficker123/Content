@@ -27,7 +27,7 @@ public class Spieler {
 		}
 		return gesamtgewicht;
 	}
-
+                            
 	/**
 
 	 *
