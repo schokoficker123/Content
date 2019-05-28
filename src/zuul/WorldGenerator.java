@@ -99,11 +99,22 @@ public class WorldGenerator {
 		lichtung.gegenstandAblegen(new Essen("Muffin", "lecker lecker", 0.3, 5,0)); 
 	}
 
+	/*
+	 * Um eine Quest einzufügen muss man nur: 1. Name vom Questgeber, 2. Langbeschreibung der Quest, 3.name der Quest 
+	 * (max 1 Wort), 4. Kurzbeschreibung der Quest eingeben.
+	 */
 	private void addNPC() {
-		taverne.setNPC(new NPC("Der alte Gibbs", "Arr ich bin der alte Gibbs, um mein Rätsel zu lösen brauchst du etwas Grips. \n"
+		taverne.setNPC(new NPC("Der alte Gibbs",
+				 "Arr ich bin der alte Gibbs, um mein Rätsel zu lösen brauchst du etwas Grips. \n"
 				 +"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. Auf hoher See ich früher war! \n"
-				+ "Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n"
-				+ "Sage mir, möchtest du die Aufgabe erfüllen? [ANNEHMEN] [ABLEHNEN]"));
+				 +"Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
+				 "ring",
+				 "Finde den Ring vom alten Gibbs"));
+		
+		rathaus.setNPC(new NPC("Norrington",
+				 "Willkommen im Rathaus",
+				 "schwert",
+				 "Kaufe dir ein besseres Schwert um den dungeon zu bezwingen"));
 	}
 /**
  * Der Startraum soll der Marktplatz sein.
@@ -112,13 +123,5 @@ public class WorldGenerator {
 	public Raum getStartRaum() {
 		return this.marktplatz;
 	}
-/*
-    private void addQuest() {
-		// quests adden
-    	taverne.addQuest(new Quest("Barceeper`s Quest:", "Finde den Ring vom alten Gibbs"));
-    	
-    	
-		
-    }
-    */
+
 }
