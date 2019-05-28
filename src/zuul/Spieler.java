@@ -8,11 +8,9 @@ public class Spieler {
 	private double tragkraft;
 	private ArrayList<Gegenstand> gegenstaende;
 	private ArrayList<NPC> quest;
-	private ArrayList<NPC> questkurz;
 
 	public Spieler() {
 		this.quest=new ArrayList<>();
-		this.questkurz=new ArrayList<>();
 		this.gegenstaende=new ArrayList<>();
 		this.tragkraft = 30;
 	}

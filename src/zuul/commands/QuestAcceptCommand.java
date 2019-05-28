@@ -2,7 +2,6 @@ package zuul.commands;
 
 import zuul.Befehl;
 import zuul.Spieler;
-import zuul.NPC;
 
 public class QuestAcceptCommand implements CommandFunction {
     private Spieler spieler;
