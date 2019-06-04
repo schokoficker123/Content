@@ -26,7 +26,7 @@ public class QuestAcceptCommand implements CommandFunction {
         if(geklappt) {
             System.out.println("Quest angenommen");
         } else {
-            System.out.println("In diesem Raum gibt es diese Quest nicht oder du hast den Questnamen nicht angegeben!");
+            System.out.println("In diesem Raum gibt es diese Quest nicht und/oder du hast den Questnamen nicht (richtig) angegeben!");
         }
     }
 }
