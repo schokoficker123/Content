@@ -1,4 +1,4 @@
-	package zuul;
+package zuul;
 
 public class Quest {
 

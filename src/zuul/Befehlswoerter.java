@@ -10,41 +10,41 @@ package zuul;
 
 public class Befehlswoerter
 {
-    // ein konstantes Array mit den gueltigen Befehlswoertern
-    private static final String gueltigeBefehle[] = {
-        "go", "look", "speak", "questaccept", "take", "drop", "eat", "status", "quests", "quit", "help"
-    };
+	// ein konstantes Array mit den gueltigen Befehlswoertern
+	private static final String gueltigeBefehle[] = {
+			"go", "look", "speak", "questaccept", "take", "drop", "eat", "status", "quests", "quit", "help"
+	};
 
-    /**
-     * Konstruktor - initialisiere die Befehlswoerter.
-     */
-    public Befehlswoerter()
-    {
-        // nichts zu tun momentan...
-    }
+	/**
+	 * Konstruktor - initialisiere die Befehlswoerter.
+	 */
+	public Befehlswoerter()
+	{
+		// nichts zu tun momentan...
+	}
 
-    public String getGueltigeBefehle() {
-        String erg="";
-        for(String s: gueltigeBefehle) {
-            erg+=s+" / ";
-        }
-        return erg;
-    }
+	public String getGueltigeBefehle() {
+		String erg="";
+		for(String s: gueltigeBefehle) {
+			erg+=s+" / ";
+		}
+		return erg;
+	}
 
-    /**
-     * Pruefe, ob eine gegebene Zeichenkette ein gueltiger
-     * Befehl ist.
-     * @return 'true', wenn die gegebene Zeichenkette ein gueltiger
-     * Befehl ist, 'false' sonst.
-     */
-    public boolean istBefehl(String eingabe)
-    {
-        for(int i = 0; i < gueltigeBefehle.length; i++) {
-            if(gueltigeBefehle[i].equals(eingabe))
-                return true;
-        }
-        // Wenn wir hierher gelangen, wurde die Eingabe nicht
-        // in den Befehlswoerter gefunden.
-        return false;
-    }
+	/**
+	 * Pruefe, ob eine gegebene Zeichenkette ein gueltiger
+	 * Befehl ist.
+	 * @return 'true', wenn die gegebene Zeichenkette ein gueltiger
+	 * Befehl ist, 'false' sonst.
+	 */
+	public boolean istBefehl(String eingabe)
+	{
+		for(int i = 0; i < gueltigeBefehle.length; i++) {
+			if(gueltigeBefehle[i].equals(eingabe))
+				return true;
+		}
+		// Wenn wir hierher gelangen, wurde die Eingabe nicht
+		// in den Befehlswoerter gefunden.
+		return false;
+	}
 }

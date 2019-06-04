@@ -55,7 +55,7 @@ public class Raum
 		this.quest.add(questname);
 	}
 
-	
+
 	public void setNPC(NPC neuerNPC) {
 		this.npc.add(neuerNPC);
 	}
@@ -76,7 +76,7 @@ public class Raum
 
 	public Raum getAusgang(String name) {
 		return this.ausgaenge.get(name);
-		
+
 	}
 
 	public String getLangeBeschreibung() {
@@ -87,14 +87,14 @@ public class Raum
 				erg+=" - " + g.toString() + "\n";
 			}
 		}
-	
+
 		if(this.npc.size()>0) {
 			erg+="\nNPCs:\n";
 			for(NPC np: this.npc) {
 				erg+=" - " + np.npcName() + "\n";
 			}
 		}
-	 
+
 		return erg;
 
 	}
@@ -118,10 +118,10 @@ public class Raum
 	{
 		return beschreibung;
 	}
-/**
- * 
- * @param gesucht
- */
+	/**
+	 * 
+	 * @param gesucht
+	 */
 	public void entferneGegenstand(Gegenstand gesucht) {
 		this.gegenstaende.remove(gesucht);
 	}
@@ -140,11 +140,11 @@ public class Raum
 		// Gegenstand gefunden
 		return null;
 	}
-	
+
 	public void entferneQuest(NPC questname) {
 		this.npc.remove(questname);
 	}
-	
+
 	public NPC sucheQuest(String questname) {
 		for(NPC n: this.npc) {
 			// if(g.getName() == name) --> funktioniert nicht,
@@ -172,6 +172,5 @@ public class Raum
 			return null;
 		}
 	}
-	
 
 }
