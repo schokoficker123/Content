@@ -22,12 +22,12 @@ public class Spieler {
 		// Jeder Gegenstand in der Liste wird einmal
 		// in der Variablen g abgespeichert
 		for(Gegenstand g: this.gegenstaende) {
-			// a = a + b oder a+=b                              
+			// a = a + b oder a+=b
 			gesamtgewicht += g.getGewicht();
 		}
 		return gesamtgewicht;
 	}
-
+                            
 	/**
 
 	 *
@@ -92,16 +92,16 @@ public class Spieler {
 		if(gesucht==null) {
 			return false;
 		} 
-		if(gesucht!=null) {
-			this.quest.add(gesucht);
-			this.aktuellerRaum.entferneQuest(gesucht);	
-			return true;
-		} else {
-			return false;
+			if(gesucht!=null) {
+				this.quest.add(gesucht);
+				this.aktuellerRaum.entferneQuest(gesucht);	
+				return true;
+			} else {
+				return false;
+			}
 		}
-	}
-
-
+	
+	
 
 	public String zeigeStatus() {
 		String erg="Ich kann insgesamt ";
@@ -125,6 +125,9 @@ public class Spieler {
 	 */
 	public Raum getAktuellerRaum() {
 		return aktuellerRaum;
+	}
+	public ArrayList<Gegenstand> getGegenstaende() {
+		return gegenstaende;
 	}
 	/**
 	 * Diese Methode erlaubt es dem Spieler einen Gegenstand zu essen.

@@ -89,7 +89,7 @@ public class WorldGenerator {
 		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 1.6));
 		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit Sosse", 3.4 ));
 		piratenhoehle.gegenstandAblegen(new Gegenstand("Schatztruhe", "eine mit Gold gefuellte Holzkiste", 40.0));
-		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensï¿½bel", "ein gekrï¿½mmtes Sï¿½bel eines lang verstorbenen Matrosen", 8.0));
+		piratenschiff.gegenstandAblegen(new Gegenstand("Piratensäbel", "ein gekrümmtes Säbel eines lang verstorbenen Matrosen", 8.0));
 		piratenhoehle.gegenstandAblegen(new Gegenstand("Schwert", "das Schwert des alten Piratenkapitaens", 10.0));
 		sumpf.gegenstandAblegen(new Essen("Regenwurm", "ein kleiner Wurm den man bei Hungersnot essen kann", 0.1, 2,0)); 
 		sumpf.gegenstandAblegen(new Essen("Pilz", "ein seltsam aussehender Pilz", 0.2, 20,1));
@@ -103,33 +103,24 @@ public class WorldGenerator {
 	 */
 	private void addNPC() {
 		taverne.setNPC(new NPC("Der alte Gibbs",
-<<<<<<< HEAD
+
 				 "Arr ich bin der alte Gibbs, um mein Rätsel zu lösen brauchst du etwas Grips. \n"
-				 +"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. Auf hoher See ich früher war! \n"
-				 +"Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
+				 +"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. \n"
+				 + " Auf hoher See ich früher war! Segelte von Bucht zu Bucht jedes Jahr. \n"
+				 + " Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
 				 "ring",
 				 "Finde den Ring vom alten Gibbs \n",
 				 "Ich kann dir nicht genug Danken!!!"));
 		
 		rathaus.setNPC(new NPC("Leutnant Norrington",
-				 "Willkommen im Rathaus, in diesem Dorf herrschte schon lange friede, doch jetzt musst du in die Dorfschmiede \n"
-				+ "Danach bezwinge den Kerker (Dungeon) und töte dort den Anwärter (Boss)!",
+				 "Willkommen im Rathaus, \n"
+				 + " in diesem Dorf herrschte schon lange friede, doch jetzt musst du in die Dorfschmiede \n"
+				 + "Danach bezwinge den Kerker (Dungeon) und töte dort den Anwärter (Boss)!",
 				 "schwert",
 				 "Kaufe dir ein besseres Schwert um den dungeon zu bezwingen \n",
 				 "Gute Arbeit, nun bist du bereit"));
-=======
-				"Arr ich bin der alte Gibbs, um mein Rätsel zu lösen brauchst du etwas Grips. \n"
-						+"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. Auf hoher See ich früher war! \n"
-						+"Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
-						"ring",
-				"Finde den Ring vom alten Gibbs \n"));
 
-		rathaus.setNPC(new NPC("Leutnant Norrington",
-				"Willkommen im Rathaus, in diesem Dorf herrschte schon lange friede, doch jetzt musst du in die Dorfschmiede \n"
-						+ "Danach bezwinge den Kerker (Dungeon) und töte dort den Anwärter (Boss)!",
-						"schwert",
-				"Kaufe dir ein besseres Schwert um den dungeon zu bezwingen \n"));
->>>>>>> 0a55138d84a7fcedbc3fbc7148ac1ddb23e0ac25
+
 	}
 	/**
 	 * Der Startraum soll der Marktplatz sein.

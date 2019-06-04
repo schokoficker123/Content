@@ -1,14 +1,21 @@
 package zuul;
 
 public class Quest {
+	private Spieler spieler;
 	
-/**public void QuestAbschliessen() {
-		boolean Questfertig = ;
+	public Quest(Spieler spieler) {
+		this.spieler = spieler;
+		
+	}
+
+	public void QuestAbschliessen() {
+		//boolean Questfertig = this.spieler.getAktuellerRaum();
+		boolean Questfertig = this.spieler.getGegenstaende();
 		if(Questfertig) {
-			System.out.println("");
+			//System.out.println("Tippe: questabgeben");
 		} else {
-			return null;
+			System.out.println();
 		}
-	} */
+	} 
 
 }
