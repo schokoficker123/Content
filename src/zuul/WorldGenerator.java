@@ -2,15 +2,15 @@ package zuul;
 
 public class WorldGenerator {
 	private Raum piratenschiff, piratenhoehle, piratenbucht, lichtung, sumpf, hexenhaus, dungeon, ebene1, ebene2, bossraum, wald, marktplatz, rathaus, schmied, taverne, gasthaus, keller, geheimgang; 
-	
+
 
 	public WorldGenerator() {
 		this.raeumeAnlegen();
 		this.setzeAusgaenge();
 		this.addGegenstaende();
 		this.addNPC();
-		
-		
+
+
 	}
 
 	private void raeumeAnlegen() {
@@ -82,9 +82,9 @@ public class WorldGenerator {
 		bossraum.setAusgang("up", ebene2);
 	}
 
-/**
- * Diese Methode fuegt Gegenstaende in bestimmten Rauemen ein.
- */
+	/**
+	 * Diese Methode fuegt Gegenstaende in bestimmten Rauemen ein.
+	 */
 	private void addGegenstaende() {
 		taverne.gegenstandAblegen(new Gegenstand("Bierkrug", "ein leckeres dunkles Pils in einem edlen Krug", 1.6));
 		taverne.gegenstandAblegen(new Gegenstand("Teller", "ein Teller mit deftigem Wildschweinfleisch mit Sosse", 3.4 ));
@@ -103,6 +103,7 @@ public class WorldGenerator {
 	 */
 	private void addNPC() {
 		taverne.setNPC(new NPC("Der alte Gibbs",
+<<<<<<< HEAD
 				 "Arr ich bin der alte Gibbs, um mein Rätsel zu lösen brauchst du etwas Grips. \n"
 				 +"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. Auf hoher See ich früher war! \n"
 				 +"Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
@@ -116,11 +117,24 @@ public class WorldGenerator {
 				 "schwert",
 				 "Kaufe dir ein besseres Schwert um den dungeon zu bezwingen \n",
 				 "Gute Arbeit, nun bist du bereit"));
+=======
+				"Arr ich bin der alte Gibbs, um mein Rätsel zu lösen brauchst du etwas Grips. \n"
+						+"Meinen Ring habe ich verloren, bring ihn mir! Dann werde ich dich belohnen. Auf hoher See ich früher war! \n"
+						+"Segelte von Bucht zu Bucht jedes Jahr. Gold und Ehre wirst du haben. Du darfst nur nicht versagen. \n",
+						"ring",
+				"Finde den Ring vom alten Gibbs \n"));
+
+		rathaus.setNPC(new NPC("Leutnant Norrington",
+				"Willkommen im Rathaus, in diesem Dorf herrschte schon lange friede, doch jetzt musst du in die Dorfschmiede \n"
+						+ "Danach bezwinge den Kerker (Dungeon) und töte dort den Anwärter (Boss)!",
+						"schwert",
+				"Kaufe dir ein besseres Schwert um den dungeon zu bezwingen \n"));
+>>>>>>> 0a55138d84a7fcedbc3fbc7148ac1ddb23e0ac25
 	}
-/**
- * Der Startraum soll der Marktplatz sein.
- * @return Marktplatz
- */
+	/**
+	 * Der Startraum soll der Marktplatz sein.
+	 * @return Marktplatz
+	 */
 	public Raum getStartRaum() {
 		return this.marktplatz;
 	}

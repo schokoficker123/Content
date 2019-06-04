@@ -26,38 +26,36 @@ public class Spiel
 
 {
 
-    private Parser parser;
-    private Spieler spieler;
-    private HashMap<String, CommandFunction> commands;
-    private boolean beendet;
-    
+	private Parser parser;
+	private Spieler spieler;
+	private HashMap<String, CommandFunction> commands;
+	private boolean beendet;
 
-    /**
-     * Erzeugt ein Spiel
-     */
-    public Spiel()
-    {
-        this.beendet=false;
-        this.spieler=new Spieler();
-        raeumeAnlegen();
-        parser = new Parser();
-        this.commands=new HashMap<>();
-        
 
-        this.commands.put("go", new GoCommand(this.spieler));      
-        this.commands.put("look", new LookCommand(this.spieler));
-        this.commands.put("speak", new NPCSpeakCommand(this.spieler));
-        this.commands.put("questaccept", new QuestAcceptCommand(this.spieler));
-        this.commands.put("take", new TakeCommand(this.spieler));
-        this.commands.put("drop", new DropCommand(this.spieler));
-        this.commands.put("eat", new EatCommand(this.spieler));
-        this.commands.put("status", new StatusCommand(this.spieler));
-        this.commands.put("quests", new QuestCommand(this.spieler));
-        this.commands.put("quit", new QuitCommand(this));
-        this.commands.put("help", new HelpCommand(this.parser));
-    }
+	/**
+	 * Erzeugt ein Spiel
+	 */
+	public Spiel()
+	{
+		this.beendet=false;
+		this.spieler=new Spieler();
+		raeumeAnlegen();
+		parser = new Parser();
+		this.commands=new HashMap<>();
 
-	 
+
+		this.commands.put("go", new GoCommand(this.spieler));      
+		this.commands.put("look", new LookCommand(this.spieler));
+		this.commands.put("speak", new NPCSpeakCommand(this.spieler));
+		this.commands.put("questaccept", new QuestAcceptCommand(this.spieler));
+		this.commands.put("take", new TakeCommand(this.spieler));
+		this.commands.put("drop", new DropCommand(this.spieler));
+		this.commands.put("eat", new EatCommand(this.spieler));
+		this.commands.put("status", new StatusCommand(this.spieler));
+		this.commands.put("quests", new QuestCommand(this.spieler));
+		this.commands.put("quit", new QuitCommand(this));
+		this.commands.put("help", new HelpCommand(this.parser));
+	}
 	private void raeumeAnlegen()
 	{
 		this.spieler.geheZu(new WorldGenerator().getStartRaum());  // das Spiel startet auf der Lichtung
@@ -86,11 +84,40 @@ public class Spiel
 			verarbeiteBefehl(befehl);
 		}
 		for (int i=0;i<=100;i+=20) {
-			System.out.println("Laden: " + i + "%");
-			Thread.sleep(1000);
+			System.out.println("Speichere Daten: " + i + "%");
+			Thread.sleep(100);
 		}
-
-		System.out.println("Danke fuers Spielen. Auf Wiedersehen.");
+		
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("                 Danke fuers Spielen von");
+		System.out.println("                      WORLD OF ZUUL");
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("                        Credits:");
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("Produced by:                                         Developed by:");
+		System.out.println("Team ContenT                                             Marian Z.");
+		System.out.println("VadoHaze                                                 Miguel W.");
+		System.out.println("                                                         Cedric W.");
+		System.out.println("                                                                  ");
+		System.out.println("In cooperation with:                                 Sponsored by:");
+		System.out.println("VadoHaze GmbH                                        VadoHaze     ");
+		System.out.println("GitHub                                                            ");
+		System.out.println("Bernd H.                                                          ");
+		System.out.println("Carsten M.                                                        ");
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("                        Detailed Credits:");
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("Quest Creator:                                   Scenario-Creator:");
+		System.out.println("Miguel W.                                                Cedric W.");
+		System.out.println("                                                                  ");
+		System.out.println("Map-Creator:                                                      ");
+		System.out.println("Marian Z.                                                         ");
+		System.out.println("------------------------------------------------------------------");
+		System.out.println("------------------------------------------------------------------");
+		
+	
+	
 	}
 
 	/**
@@ -111,10 +138,10 @@ public class Spiel
 		System.out.println();
 		raumInfoAusgeben();
 	}
-/**
- * 
- * @param befehl
- */
+	/**
+	 * 
+	 * @param befehl
+	 */
 	private void verarbeiteBefehl(Befehl befehl)
 	{
 		if(befehl.istUnbekannt()) {
@@ -127,11 +154,9 @@ public class Spiel
 	}
 
 
-    private void raumInfoAusgeben() {
-        System.out.println(this.spieler.getAktuellerRaum().getLangeBeschreibung());
-    }
-    
-
+	private void raumInfoAusgeben() {
+		System.out.println(this.spieler.getAktuellerRaum().getLangeBeschreibung());
+	}
 
 
 }
