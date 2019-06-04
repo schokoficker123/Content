@@ -1,16 +1,17 @@
 package zuul;
 
 public class Quest {
-	private Spieler spieler;
+	private Gegenstand gegenstand;
 
-	public Quest(Spieler spieler) {
-		this.spieler = spieler;
+	public Quest(Gegenstand gegenstand) {
+		this.gegenstand = gegenstand;
 
 	}
 
 	public void QuestAbschliessen() {
 		//boolean Questfertig = this.spieler.getAktuellerRaum();
-		boolean Questfertig = this.spieler.getGegenstaende() != null;
+		boolean Questfertig = this.gegenstand.getRelevanz() == 1;
+
 		if(Questfertig) {
 			System.out.println("Tippe: questabgeben");
 		} else {

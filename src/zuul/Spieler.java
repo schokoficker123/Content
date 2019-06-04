@@ -6,6 +6,7 @@ public class Spieler {
 
 	private Raum aktuellerRaum;
 	private double tragkraft;
+	private int questtragkraft;
 	private ArrayList<Gegenstand> gegenstaende;
 	private ArrayList<NPC> quest;
 
@@ -13,6 +14,7 @@ public class Spieler {
 		this.quest=new ArrayList<>();
 		this.gegenstaende=new ArrayList<>();
 		this.tragkraft = 30;
+		this.questtragkraft = 1000;
 	}
 
 	public double ermittleGewicht() {
@@ -27,7 +29,14 @@ public class Spieler {
 		}
 		return gesamtgewicht;
 	}
-                            
+                     
+	public double ermittleRelevanzGewicht() {
+		int gesamtrelevanz=0;
+		for(Gegenstand g: this.gegenstaende) {
+			gesamtrelevanz += g.getRelevanz();
+		}
+		return gesamtrelevanz;
+	}
 	/**
 
 	 *
@@ -109,8 +118,10 @@ public class Spieler {
 		for(Gegenstand g: this.gegenstaende) {
 			erg+=" - " + g.getName() + " " + g.getGewicht()+"kg\n";
 		}
-		erg+=this.tragkraft-ermittleGewicht() + "kg kann ich noch tragen!";
+		erg+=this.tragkraft-ermittleGewicht() + "kg kann ich noch tragen!" + ermittleRelevanzGewicht();
 		return erg;
+		//erg+=this.questtragkraft-ermittleRelevanzGewicht();
+
 	}
 	/**
 	 * Diese Methode erlaubt es dme Spieler von Raum zu Raum zu gehen.

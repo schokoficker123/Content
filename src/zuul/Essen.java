@@ -11,9 +11,9 @@ public class Essen extends Gegenstand{
 	 * der Bonus Wert wird returnt
 	 */
 
-	public Essen(String name, String beschreibung, double gewicht, int bonus, int gifteffekt) {
+	public Essen(String name, String beschreibung, double gewicht, int questrelevant, int bonus, int gifteffekt) {
 
-		super(name, beschreibung, gewicht);
+		super(name, beschreibung, gewicht, questrelevant);
 		this.bonus=bonus;
 		this.gifteffekt=gifteffekt;
 	}
