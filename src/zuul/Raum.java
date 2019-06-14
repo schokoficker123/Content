@@ -147,9 +147,6 @@ public class Raum
 
 	public NPC sucheQuest(String questname) {
 		for(NPC n: this.npc) {
-			// if(g.getName() == name) --> funktioniert nicht,
-			// da hier nur die Referenz auf Gleichheit geprueft wird
-			// d.h. ob die im gleichen Speicher stehen
 			if(n.getQname().equalsIgnoreCase(questname)) {
 				return n;
 				// Dieses return beendet die Methode

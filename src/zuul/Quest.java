@@ -15,10 +15,15 @@ public class Quest {
 	}
 
 	public void QuestAbschliessen() {
-		//boolean Questfertig = this.spieler.getAktuellerRaum();
-
-		while(i == 0);{
-			if(this.spieler.ermittleRelevanzGewicht() == 1.0) {
+				
+		/**
+		 * wenn der Spieler einen Gegenstand bei sich trägt, der für eine Quest relevant ist, 
+		 * soll der Text "Tippe: questabgeben" ausgegeben werden. Funktioniert aber nicht ...
+		 */
+		boolean Questfertig = this.spieler.ermittleRelevanzGewicht() == 1.0;
+		
+		while(i == 0) {
+			if(Questfertig) {
 				System.out.println("Tippe: questabgeben");
 				i = 1;
 

@@ -100,7 +100,7 @@ public class WorldGenerator {
 
 	/*
 	 * Um eine Quest einzufügen muss man nur: 1. Name vom Questgeber, 2. Langbeschreibung der Quest, 3.name der Quest 
-	 * (max 1 Wort), 4. Kurzbeschreibung der Quest eingeben.
+	 * (max 1 Wort), 4. Kurzbeschreibung der Quest und 5. den abschliessenden text vom npc (z.B. Danksagung) eingeben.
 	 */
 	private void addNPC() {
 		taverne.setNPC(new NPC("Der alte Gibbs",

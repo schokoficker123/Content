@@ -29,7 +29,7 @@ public class Spieler {
 		}
 		return gesamtgewicht;
 	}
-                     
+
 	public double ermittleRelevanzGewicht() {
 		int gesamtrelevanz=0;
 		for(Gegenstand g: this.gegenstaende) {
@@ -75,7 +75,7 @@ public class Spieler {
 		}
 	}
 	/**
-	 * Diese Methode sorgt dafuer das der Spieler seine Gegenstï¿½nde im Inventar ablegen kann "droppen".
+	 * Diese Methode sorgt dafür, dass der Spieler seine Gegenstände im Inventar ablegen kann.
 	 * @param name des Gegenstandes
 	 * @return Ob der Gegenstand gefunden wurde oder nicht, wurde er gefunden, wird er abgelegt
 	 */
@@ -93,7 +93,7 @@ public class Spieler {
 		return false;
 	}
 	/**
-	 * Diese Methode überprüft ob eine Quest mit passendem namen in dem bestimmten Raum vorhanden ist.
+	 * Diese Methode überprüft ob eine Quest mit passendem namen in dem Raum vorhanden ist.
 	 * @return erg
 	 */
 	public boolean questAnnehmen(String questname) {
@@ -101,16 +101,28 @@ public class Spieler {
 		if(gesucht==null) {
 			return false;
 		} 
-			if(gesucht!=null) {
-				this.quest.add(gesucht);
-				this.aktuellerRaum.entferneQuest(gesucht);	
+		if(gesucht!=null) {
+			this.quest.add(gesucht);
+			this.aktuellerRaum.entferneQuest(gesucht);	
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/** public boolean questAbgeben(String questname) {
+		for(Gegenstand g: this.gegenstaende) {
+			if(g.getName().equalsIgnoreCase(questname)) {
+				this.quest.remove(g);
+				this.aktuellerRaum.questAbgeben(g);
 				return true;
-			} else {
-				return false;
+				// Methode wird abgebrochen (damit auch die Schleife)
 			}
 		}
-	
-	
+		// Falls das hier erreicht wird, wurde der Gegenstand
+		// nicht gefunden
+		return false;
+	} */
 
 	public String zeigeStatus() {
 		String erg="Ich kann insgesamt ";
@@ -118,7 +130,7 @@ public class Spieler {
 		for(Gegenstand g: this.gegenstaende) {
 			erg+=" - " + g.getName() + " " + g.getGewicht()+"kg\n";
 		}
-		erg+=this.tragkraft-ermittleGewicht() + "kg kann ich noch tragen!" + ermittleRelevanzGewicht();
+		erg+=this.tragkraft-ermittleGewicht() + "kg kann ich noch tragen! " + ermittleRelevanzGewicht();
 		return erg;
 		//erg+=this.questtragkraft-ermittleRelevanzGewicht();
 
